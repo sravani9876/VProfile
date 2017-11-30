@@ -3,7 +3,10 @@
   become: yes
   gather_facts: False
   tasks:
-
+  - name: Update os
+    apt:
+      upgrade: yes
+      update_cache: yes
   - name: Add java8 repo source list
     apt_repository:
       repo: ppa:openjdk-r/ppa
