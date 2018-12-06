@@ -1,0 +1,8 @@
+---
+- hosts: dev
+  sudo: yes
+  tasks:
+  - name: copy artifact to tomcat
+    copy: src=target/vprofile-v1.war dest=/var/lib/tomcat7/webapps/
+  - name: restart tomcat7service
+    service: name=tomcat7 state=restarted
